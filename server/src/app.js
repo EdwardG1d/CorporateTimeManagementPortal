@@ -10,8 +10,10 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/status', (req, res) => {
-	res.send('Hello World!')
+app.post('/status', (req, res) => {
+	res.send({
+		message: 'Your user was registered!',
+	})
 })
 
 const PORT = process.env.PORT || 8081
